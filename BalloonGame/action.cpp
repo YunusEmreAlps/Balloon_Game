@@ -7,7 +7,7 @@ Action::Action(QWidget *parent) : QLabel(parent)
 {
      QTimer *Time_2 = new QTimer() ;
      connect(Time_2,SIGNAL(timeout()),this,SLOT(Act_Balloon())) ;
-     setGeometry(X_Coor,100,50,50) ;
+     setGeometry(X_Coor,120,50,50) ;
      show() ;
 
      Click = false ;

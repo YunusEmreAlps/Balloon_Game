@@ -3,6 +3,7 @@
 
 #include <time.h>
 #include <QTime>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -13,7 +14,11 @@ MainWindow::MainWindow(QWidget *parent) :
     //---------------------------------
 
     Time = new QTimer() ;
-    Time->start(1300) ;
+
+    if(Control == false )
+    {
+      Time->start(1300) ;
+    }
     connect(Time,SIGNAL(timeout()),this,SLOT(Creator())) ;
 
     //---------------------------------
@@ -100,29 +105,66 @@ void MainWindow::Print()
   ui->Second->setText("Second : "+QString::number(Seco)+ "") ;
 }
 
-/*void MainWindow::Crea()
+void MainWindow::on_actionEasy_triggered()
 {
-    int X = rand()%1051+ 50 ; // Max_X : 1200 , Min_X : 50
+   Time->start(1300) ;
 
-     Action *action = new Action(this);
-     Photo.push_back(action) ;
+   ui->actionEasy->setChecked(true) ;
+   ui->actionMedium->setChecked(false) ;
+   ui->actionHard->setChecked(false) ;
 
-     Random_Ball = rand()%7+1 ; // Max : 7 , Min : 1
+   ui->Mode->setStyleSheet("color:rgb(18, 200, 94) ;") ;
+   ui->Mode->setText("Mode : Easy ") ;
 
-     action->X_Coor=X ;
-     action->Ball_Num=Random_Ball ; // Create Balloon
-     action -> mainframe = this ;
+   Control = true ;
 
-     Total++ ;
-     action->show() ;
-}*/
+}
+
+void MainWindow::on_actionMedium_triggered()
+{
+    Time->start(1000) ;
+
+    ui->actionEasy->setChecked(false) ;
+    ui->actionMedium->setChecked(true) ;
+    ui->actionHard->setChecked(false) ;
+
+    ui->Mode->setStyleSheet("color:rgb(83, 26, 255) ;") ;
+    ui->Mode->setText("Mode : Medium ") ;
+
+    Control = true ;
+}
+
+void MainWindow::on_actionHard_triggered()
+{
+     Time->start(800) ;
+
+     ui->actionEasy->setChecked(false) ;
+     ui->actionMedium->setChecked(false) ;
+     ui->actionHard->setChecked(true) ;
+
+     ui->Mode->setStyleSheet("color:rgb(255, 10, 46) ;") ;
+     ui->Mode->setText("Mode : Hard ") ;
+
+     Control = true ;
+}
+
+void MainWindow::on_actionExit_triggered()
+{
+    Time->stop() ;
+    Tot_Sec->stop() ;
+
+    // Exit Tusuna bastıktan sonra ( son balonları patlatın ) ve  Score gormek icin Lutfen Exit tusuna bir kez daha basın .
+
+    ui->actionEasy->setChecked(false) ;
+    ui->actionMedium->setChecked(false) ;
+    ui->actionHard->setChecked(false) ;
+    ui->actionExit->setChecked(true) ;
+
+   if(((Counter-1)+Result)==(Total-1))
+   {
+     QMessageBox::information(this," Score "," Second : "+QString::number(Seco)+"\n Correct : "+QString::number(Counter-1)+" \n inCorrect : "+QString::number(Result)+" \n Total : "+QString::number(Total-1)+"") ;
+
+   }
 
 
-
-
-
-
-
-
-
-
+}

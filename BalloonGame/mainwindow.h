@@ -41,16 +41,23 @@ public:
 
      int iCr = 0 ;
 
+     bool Control = false ;
+
 
 private slots :
 
 
      void Print() ;
 
-    // void Crea() ;
-
      void Creator() ; // Balloon Creator
 
+     void on_actionEasy_triggered();
+
+     void on_actionMedium_triggered();
+
+     void on_actionHard_triggered();
+
+     void on_actionExit_triggered();
 
 private:
     Ui::MainWindow *ui;
