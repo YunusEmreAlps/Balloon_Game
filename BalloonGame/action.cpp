@@ -25,9 +25,6 @@ void Action::Act_Balloon()
         setGeometry(X_Coor,y()+10,50,50)  ;
         Act = true ;
 
-
-
-
     }
 
 }
@@ -40,7 +37,7 @@ void Action::mousePressEvent(QMouseEvent *e)
     {
         Click = !Click ;
         setGeometry(X_Coor,y(),50,50)  ;
-        setEnabled(false) ;
+        //setEnabled(false) ;
 
         QImage Boom(":/Photo/Photo/Boom.png") ;
         setScaledContents(true) ;
@@ -49,9 +46,11 @@ void Action::mousePressEvent(QMouseEvent *e)
         mainframe->Count() ;
 
         QApplication::processEvents() ;
-        QThread::sleep(1) ;
+        QThread::msleep(150) ; // Milisecond -> 0.15 second
 
-        setGeometry(0,0,0,0) ;
+
+        delete this ;
+       // setGeometry(0,0,0,0) ;
 
     }
 

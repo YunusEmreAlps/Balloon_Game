@@ -108,6 +108,7 @@ void MainWindow::Print()
 void MainWindow::on_actionEasy_triggered()
 {
    Time->start(1300) ;
+   Tot_Sec->start(1000) ;
 
    ui->actionEasy->setChecked(true) ;
    ui->actionMedium->setChecked(false) ;
@@ -123,6 +124,7 @@ void MainWindow::on_actionEasy_triggered()
 void MainWindow::on_actionMedium_triggered()
 {
     Time->start(1000) ;
+     Tot_Sec->start(1000) ;
 
     ui->actionEasy->setChecked(false) ;
     ui->actionMedium->setChecked(true) ;
@@ -137,6 +139,7 @@ void MainWindow::on_actionMedium_triggered()
 void MainWindow::on_actionHard_triggered()
 {
      Time->start(800) ;
+     Tot_Sec->start(1000) ;
 
      ui->actionEasy->setChecked(false) ;
      ui->actionMedium->setChecked(false) ;
@@ -165,6 +168,4 @@ void MainWindow::on_actionExit_triggered()
      QMessageBox::information(this," Score "," Second : "+QString::number(Seco)+"\n Correct : "+QString::number(Counter-1)+" \n inCorrect : "+QString::number(Result)+" \n Total : "+QString::number(Total-1)+"") ;
 
    }
-
-
 }
