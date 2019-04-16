@@ -59,6 +59,8 @@ private slots :
 
      void on_actionExit_triggered();
 
+     void on_actionUltra_Hard_triggered();
+
 private:
     Ui::MainWindow *ui;
 

@@ -29,6 +29,7 @@ public:
     QAction *actionMedium;
     QAction *actionHard;
     QAction *actionExit;
+    QAction *actionUltra_Hard;
     QWidget *centralWidget;
     QLabel *Second;
     QLabel *Correct;
@@ -68,6 +69,9 @@ public:
         actionExit->setObjectName(QString::fromUtf8("actionExit"));
         actionExit->setCheckable(true);
         actionExit->setMenuRole(QAction::QuitRole);
+        actionUltra_Hard = new QAction(MainWindow);
+        actionUltra_Hard->setObjectName(QString::fromUtf8("actionUltra_Hard"));
+        actionUltra_Hard->setCheckable(true);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         Second = new QLabel(centralWidget);
@@ -127,6 +131,7 @@ public:
         menuLevel->addAction(actionEasy);
         menuLevel->addAction(actionMedium);
         menuLevel->addAction(actionHard);
+        menuLevel->addAction(actionUltra_Hard);
         menuExit->addAction(actionExit);
 
         retranslateUi(MainWindow);
@@ -141,6 +146,7 @@ public:
         actionMedium->setText(QApplication::translate("MainWindow", "Medium", nullptr));
         actionHard->setText(QApplication::translate("MainWindow", "Hard", nullptr));
         actionExit->setText(QApplication::translate("MainWindow", "Exit", nullptr));
+        actionUltra_Hard->setText(QApplication::translate("MainWindow", "Very Hard", nullptr));
         Second->setText(QString());
         Correct->setText(QString());
         inCorrect->setText(QString());

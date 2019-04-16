@@ -163,6 +163,7 @@
     <addaction name="actionEasy"/>
     <addaction name="actionMedium"/>
     <addaction name="actionHard"/>
+    <addaction name="actionUltra_Hard"/>
    </widget>
    <widget class="QMenu" name="menuExit">
     <property name="title">
@@ -239,6 +240,14 @@
    </property>
    <property name="menuRole">
     <enum>QAction::QuitRole</enum>
+   </property>
+  </action>
+  <action name="actionUltra_Hard">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Very Hard</string>
    </property>
   </action>
  </widget>

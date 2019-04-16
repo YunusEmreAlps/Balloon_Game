@@ -94,8 +94,6 @@ void MainWindow::Count()
 
     ui->Tot->setText("Total : "+QString::number(Total-1) +"") ;
 
-
-
 }
 
 void MainWindow::Print()
@@ -151,6 +149,22 @@ void MainWindow::on_actionHard_triggered()
      Control = true ;
 }
 
+void MainWindow::on_actionUltra_Hard_triggered()
+{
+    Time->start(500) ;
+    Tot_Sec->start(1000) ;
+
+    ui->actionEasy->setChecked(false) ;
+    ui->actionMedium->setChecked(false) ;
+    ui->actionHard->setChecked(true) ;
+
+    ui->Mode->setStyleSheet("color:rgb(170, 0, 0);") ;
+    ui->Mode->setText("Mode : Very Hard ") ;
+
+    Control = true ;
+}
+
+
 void MainWindow::on_actionExit_triggered()
 {
     Time->stop() ;
@@ -169,3 +183,4 @@ void MainWindow::on_actionExit_triggered()
 
    }
 }
+
