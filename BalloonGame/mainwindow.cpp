@@ -111,6 +111,7 @@ void MainWindow::on_actionEasy_triggered()
    ui->actionEasy->setChecked(true) ;
    ui->actionMedium->setChecked(false) ;
    ui->actionHard->setChecked(false) ;
+   ui->actionUltra_Hard->setChecked(false);
 
    ui->Mode->setStyleSheet("color:rgb(18, 200, 94) ;") ;
    ui->Mode->setText("Mode : Easy ") ;
@@ -127,6 +128,8 @@ void MainWindow::on_actionMedium_triggered()
     ui->actionEasy->setChecked(false) ;
     ui->actionMedium->setChecked(true) ;
     ui->actionHard->setChecked(false) ;
+    ui->actionUltra_Hard->setChecked(false);
+
 
     ui->Mode->setStyleSheet("color:rgb(83, 26, 255) ;") ;
     ui->Mode->setText("Mode : Medium ") ;
@@ -142,6 +145,8 @@ void MainWindow::on_actionHard_triggered()
      ui->actionEasy->setChecked(false) ;
      ui->actionMedium->setChecked(false) ;
      ui->actionHard->setChecked(true) ;
+     ui->actionUltra_Hard->setChecked(false);
+
 
      ui->Mode->setStyleSheet("color:rgb(255, 10, 46) ;") ;
      ui->Mode->setText("Mode : Hard ") ;
@@ -156,7 +161,9 @@ void MainWindow::on_actionUltra_Hard_triggered()
 
     ui->actionEasy->setChecked(false) ;
     ui->actionMedium->setChecked(false) ;
-    ui->actionHard->setChecked(true) ;
+    ui->actionHard->setChecked(false) ;
+    ui->actionUltra_Hard->setChecked(true);
+
 
     ui->Mode->setStyleSheet("color:rgb(170, 0, 0);") ;
     ui->Mode->setText("Mode : Very Hard ") ;
