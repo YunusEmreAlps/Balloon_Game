@@ -123,9 +123,9 @@ void MainWindow::on_actionEasy_triggered()
 void MainWindow::on_actionMedium_triggered()
 {
     Time->start(1000) ;
-     Tot_Sec->start(1000) ;
+    Tot_Sec->start(1000) ;
 
-    ui->actionEasy->setChecked(false) ;
+   ui->actionEasy->setChecked(false) ;
     ui->actionMedium->setChecked(true) ;
     ui->actionHard->setChecked(false) ;
     ui->actionUltra_Hard->setChecked(false);
